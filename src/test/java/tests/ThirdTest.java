@@ -6,6 +6,7 @@ import org.junit.Test;
 import uicontext.googlesearchcontext.GoogleSearchContext;
 import utilities.Retry;
 
+@DisplayName("Third Test Suite")
 public class ThirdTest extends BaseTest{
 
     @Rule
