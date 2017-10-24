@@ -3,9 +3,12 @@ package utilities;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Retry implements TestRule {
     private int retryCount;
+    private static final Logger LOGGER = LoggerFactory.getLogger(Retry.class);
 
     public Retry(int retryCount) {
         this.retryCount = retryCount;
@@ -27,6 +30,7 @@ public class Retry implements TestRule {
                         return;
                     } catch (Throwable t) {
                         caughtThrowable = t;
+                        LOGGER.warn("Failed after {} attempt(s)", i + 1);
 
                         //  System.out.println(": run " + (i+1) + " failed");
                         System.err.println(description.getDisplayName() + ": run " + (i + 1) + " failed");

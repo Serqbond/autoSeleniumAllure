@@ -1,10 +1,13 @@
 package uicontext.googlesearchcontext;
 
 import io.qameta.allure.Step;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.googlesearch.GoogleSearchPage;
 import uicontext.BaseContext;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 public class GoogleSearchContext extends BaseContext{
 
@@ -31,7 +34,7 @@ public class GoogleSearchContext extends BaseContext{
 
     @Step("Verify expected result")
     public GoogleSearchContext shouldSeeTitle(String title) {
-        Assert.assertTrue("Title is not expected", googleSearchPage.getTitle().contains(title));
+        assertThat(googleSearchPage.getTitle(), is(equalTo(title)));
         return this;
     }
 }

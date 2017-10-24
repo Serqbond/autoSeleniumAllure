@@ -16,7 +16,7 @@ public class ThirdTest extends BaseTest{
 
         new GoogleSearchContext(driver)
                 .opensTheSearchApp()
-                .searchesFor("appl")
+                .searchesFor("apple")
                 .shouldSeeTitle("apple - Пошук Google");
     }
 }
