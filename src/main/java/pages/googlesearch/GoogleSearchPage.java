@@ -11,7 +11,6 @@ public class GoogleSearchPage extends BasePage {
 
     public GoogleSearchPage(WebDriver driver){
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id="lst-ib")

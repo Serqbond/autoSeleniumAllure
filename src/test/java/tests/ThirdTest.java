@@ -10,7 +10,7 @@ import utilities.Retry;
 public class ThirdTest extends BaseTest{
 
     @Rule
-    public Retry retry = new Retry(2);
+    public Retry retry = new Retry(1);
     @Test
     @DisplayName("Search for apple test")
     public void searchForAppleFailedTest(){
