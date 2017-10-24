@@ -1,12 +1,14 @@
 package tests;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import uicontext.googlesearchcontext.GoogleSearchContext;
 
 public class ThirdTest extends BaseTest{
 
     @Test
-    public void checkSumTest(){
+    @DisplayName("Search for apple test")
+    public void searchForAppleTest(){
 
         new GoogleSearchContext(driver)
                 .opensTheSearchApp()
