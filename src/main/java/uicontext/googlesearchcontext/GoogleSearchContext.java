@@ -31,7 +31,7 @@ public class GoogleSearchContext extends BaseContext{
 
     @Step("Verify expected result")
     public GoogleSearchContext shouldSeeTitle(String title) {
-        Assert.assertTrue(googleSearchPage.getTitle().contains(title));
+        Assert.assertTrue("Title is not expected", googleSearchPage.getTitle().contains(title));
         return this;
     }
 }

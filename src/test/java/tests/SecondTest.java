@@ -1,7 +1,6 @@
 package tests;
 
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.Assert;
 import org.junit.Test;
 import uicontext.googlesearchcontext.GoogleSearchContext;
 
