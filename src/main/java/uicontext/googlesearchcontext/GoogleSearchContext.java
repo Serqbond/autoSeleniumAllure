@@ -11,18 +11,16 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class GoogleSearchContext extends BaseContext{
 
-    WebDriver driver;
-
     public GoogleSearchContext(WebDriver driver){
-        this.driver = driver;
+        super(driver);
         googleSearchPage = new GoogleSearchPage(driver);
     }
 
     private GoogleSearchPage googleSearchPage;
 
     @Step("Open search page")
-    public GoogleSearchContext opensTheSearchApp() {
-        googleSearchPage.open("https://www.google.com.ua");
+    public GoogleSearchContext opensTheSearchApp(String baseUrl) {
+        googleSearchPage.open(baseUrl);
         return this;
     }
 

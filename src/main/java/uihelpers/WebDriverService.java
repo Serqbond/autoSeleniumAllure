@@ -9,11 +9,13 @@ import java.util.concurrent.TimeUnit;
 public class WebDriverService {
 
     private WebDriver driver;
+    private String baseUrl;
 
     public WebDriverService(){
 //        System.setProperty("http.proxyHost", "localhost");
 //        System.setProperty("http.proxyPort", "8888");
         initChromDriver();
+        setBaseUrl();
     }
 
     public WebDriver getDriver() {
@@ -39,5 +41,16 @@ public class WebDriverService {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+    }
+
+    private void setBaseUrl(){
+        baseUrl = System.getenv("webdriver.base.url");
+        if(baseUrl==null){
+            baseUrl = "https://www.google.com.ua";
+        }
+    }
+
+    public String getBaseUrl() {
+        return baseUrl;
     }
 }

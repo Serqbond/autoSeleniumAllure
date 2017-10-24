@@ -9,11 +9,13 @@ public class BaseTest {
 
     protected WebDriver driver;
     private WebDriverService webDriverService;
+    protected String baseUrl;
 
     @Before
     public void startTest(){
         webDriverService = new WebDriverService();
         driver = webDriverService.getDriver();
+        baseUrl = webDriverService.getBaseUrl();
     }
 
     @After

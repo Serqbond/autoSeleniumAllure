@@ -15,7 +15,7 @@ public class SecondTest extends BaseTest {
     public void searchForBananaTest(){
 
         new GoogleSearchContext(driver)
-                .opensTheSearchApp()
+                .opensTheSearchApp(baseUrl)
                 .searchesFor("banana")
                 .shouldSeeTitle("banana - Пошук Google");
     }

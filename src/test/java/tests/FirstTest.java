@@ -10,7 +10,7 @@ public class FirstTest extends BaseTest {
     @DisplayName("Search for pear test")
     public void searchForPearTest(){
     new GoogleSearchContext(driver)
-            .opensTheSearchApp()
+            .opensTheSearchApp(baseUrl)
             .searchesFor("pear")
             .shouldSeeTitle("pear - Пошук Google");
     }
