@@ -14,7 +14,7 @@ public class SecondTest extends BaseTest {
     @Rule
     public Retry retry = new Retry(2);
     @Test
-    //@DisplayName("Search for banana test")
+    @DisplayName("Search for banana test")
     public void searchForBananaTest(){
 
         new GoogleSearchContext(driver)
